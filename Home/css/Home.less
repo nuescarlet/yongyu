@@ -35,6 +35,7 @@ a:hover {
 @green: #73d196;
 @grey: #646766;
 @orange: #e48818;
+@top:60px;
 //主体
 #page-window{
   width: 100%;
@@ -52,7 +53,7 @@ a:hover {
   position: absolute;
   top:0px;
   left: 0px;
-  transition:all .99s cubic-bezier(0.165, 0.84, 0.44, 1);;
+  transition:all 1s cubic-bezier(0.165, 0.84, 0.44, 1);;
 }
 
 section {
@@ -127,13 +128,19 @@ section {
   .content {
     width: 960px;
     height: auto;
-    top: 180*100/1080%;
+    top: 180*200/1080%;
     left: 50%;
     margin-left: -960/2px;
     position: relative;
     z-index: 3;
+    transition: all 1.5s ease;
+    opacity:0;
+    &.active{
+      top: 180*100/1080%;
+      opacity:1;
+    }
     @media screen and (max-width: 1367px){
-      top:10px;
+      top:@top;
     }
     .title {
       font-size: 46px;
@@ -178,13 +185,19 @@ section {
   .content {
     width: 1080px;
     height: auto;
-    top: 180*100/1080%;
+    top: 180*200/1080%;
     left: 50%;
     margin-left: -1080/2px;
     position: relative;
     z-index: 3;
+    transition: all 1.5s ease;
+    opacity:0;
+    &.active{
+      top: 180*100/1080%;
+      opacity:1;
+    }
     @media screen and (max-width: 1367px){
-      top:10px;
+      top:@top;
     }
     .title {
       font-size: 46px;
@@ -202,6 +215,27 @@ section {
       li {
         float: left;
         margin: 0 20px;
+        position: relative;
+        a{
+          position:absolute;
+          display: block;
+          top:0;
+          left:0;
+          width:230px;
+          height:338px;
+          line-height: 338px;
+          background: rgba(0,0,0,0);
+          transition: all .75s ease;
+          color:#fff;
+          opacity: 0;
+          font-size: 20px;
+          letter-spacing: 1px;
+          border-radius: 6px;
+          &:hover{
+            background: rgba(0,0,0,0.4);
+            opacity: 1;
+          }
+        }
         div {
           width: 230px;
           height: 338px;
@@ -245,13 +279,19 @@ section {
   .content {
     width: 822px;
     height: auto;
-    top: 180*100/1080%;
+    top: 180*200/1080%;
     left: 50%;
     margin-left: -822/2px;
     position: relative;
     z-index: 3;
+    transition: all 1.5s ease;
+    opacity:0;
+    &.active{
+      top: 180*100/1080%;
+      opacity:1;
+    }
     @media screen and (max-width: 1367px){
-      top:10px;
+      top:@top;
     }
     .title {
       font-size: 46px;
@@ -352,13 +392,19 @@ section {
   .content {
     width: 1080px;
     height: auto;
-    top: 180*100/1080%;
+    top: 180*200/1080%;
     left: 50%;
     margin-left: -1080/2px;
     position: relative;
     z-index: 3;
+    transition: all 1.5s ease;
+    opacity:0;
+    &.active{
+      top: 180*100/1080%;
+      opacity:1;
+    }
     @media screen and (max-width: 1367px){
-      top:10px;
+      top:@top;
     }
     .title {
       font-size: 46px;
@@ -504,10 +550,13 @@ section {
       font-size: 14px;
       position:absolute;
       color:@green;
-      left:-10-14*2px;
+      left:-19px;
       top:50%;
       margin-top: -7px;
-      display: none;
+      opacity:0;
+      &:not(:nth-child(1)){
+        left:-33px;
+      }
     }
     &.active{
       border: 1px solid @green;
@@ -515,10 +564,17 @@ section {
         background: @green;
       }
       p{
-        display: block;
+        opacity:1;
+        transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        left:-38px;
       }
       b{
         display: none;
+      }
+      &:not(:nth-child(1)){
+        p{
+          left:-66px;
+        }
       }
     }
   }
@@ -567,4 +623,70 @@ header{
       }
     }
   }
+}
+//动画效果
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.animate-bounceInDown {
+  animation: 'bounceInDown' 1s ease-in-out 0s 1;
+  -webkit-animation: 'bounceInDown' 1s ease-in-out 0s 1;
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.animate-bounceInLeft {
+  animation: 'bounceInLeft' 1.5s ease-in-out 0s 1;
+  -webkit-animation: 'bounceInLeft' 1.5s ease-in-out 0s 1;
 }

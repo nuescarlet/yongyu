@@ -22,18 +22,27 @@
         switch (nowPage) {
             case 1:
                 $(".dot-btn div:nth-child(1)").addClass("active").siblings().removeClass("active")
+                $(".content").removeClass("active")
                 break;
             case 2:
                 $(".dot-btn div:nth-child(2)").addClass("active").siblings().removeClass("active")
+                $(".content").removeClass("active")
+                $("#page2 .content").addClass("active")
                 break;
             case 3:
                 $(".dot-btn div:nth-child(3)").addClass("active").siblings().removeClass("active")
+                $(".content").removeClass("active")
+                $("#page3 .content").addClass("active")
                 break;
             case 4:
                 $(".dot-btn div:nth-child(4)").addClass("active").siblings().removeClass("active")
+                $(".content").removeClass("active")
+                $("#page4 .content").addClass("active")
                 break;
             case 5:
                 $(".dot-btn div:nth-child(5)").addClass("active").siblings().removeClass("active")
+                $(".content").removeClass("active")
+                $("#page5 .content").addClass("active")
                 break;
         }
     };
@@ -126,12 +135,11 @@
         setTimeout(function () {
             turn=1
         }, 550);
-    }
+    };
     $(".btn-right").click(function(){
         if(turn==1){
             turn=0;
             nowPage=++nowPage%4;
-            console.log(nowPage);
             $(".carousel li:nth-child(2)").removeClass("active");
             $(".carousel li:nth-child(3)").addClass("active");
             $(".carousel li:nth-child(1)").css({"left":"-276px"});
@@ -144,7 +152,7 @@
                 <p>${pages[(nowPage+1)%4].text}</p>
                 </li>
             `)
-            setTimeout("$('.carousel li:nth-child(4)').css({'left':'546px'})", 0);
+            setTimeout("$('.carousel li:nth-child(4)').css({'left':'546px'})", 10);
             setTimeout("$('.carousel ul li:nth-child(1)').remove()", 300);
             cd();
         }
@@ -156,7 +164,6 @@
             if(nowPage==-1){
                 nowPage=3
             }
-            console.log(nowPage);
             $(".carousel li:nth-child(2)").removeClass("active");
             $(".carousel li:nth-child(1)").addClass("active");
             $(".carousel li:nth-child(1)").css({"left":"276px"});
@@ -169,9 +176,15 @@
                 <p>${pages[(nowPage+3)%4].text}</p>
                 </li>
             `)
-            setTimeout("$('.carousel li:nth-child(1)').css({'left':'6px'})", 0);
+            setTimeout("$('.carousel li:nth-child(1)').css({'left':'6px'})", 10);
             setTimeout("$('.carousel ul li:nth-child(4)').remove()", 550);
             cd();
         }
+    })
+    var set = setInterval("$('.btn-right').trigger('click')", 4000);
+    $('.carousel').mousemove(function () {
+        clearInterval(set)
+    }).mouseleave(function () {
+        set = setInterval("$('.btn-right').trigger('click')", 4000);
     })
 }();

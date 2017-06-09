@@ -50,7 +50,7 @@ a:hover {
   position: absolute;
   top: 0px;
   left: 0px;
-  transition: all 0.99s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 section {
   position: relative;
@@ -120,15 +120,21 @@ section {
 #page2 .content {
   width: 960px;
   height: auto;
-  top: 16.66666667%;
+  top: 33.33333333%;
   left: 50%;
   margin-left: -480px;
   position: relative;
   z-index: 3;
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+#page2 .content.active {
+  top: 16.66666667%;
+  opacity: 1;
 }
 @media screen and (max-width: 1367px) {
   #page2 .content {
-    top: 10px;
+    top: 60px;
   }
 }
 #page2 .content .title {
@@ -171,15 +177,21 @@ section {
 #page3 .content {
   width: 1080px;
   height: auto;
-  top: 16.66666667%;
+  top: 33.33333333%;
   left: 50%;
   margin-left: -540px;
   position: relative;
   z-index: 3;
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+#page3 .content.active {
+  top: 16.66666667%;
+  opacity: 1;
 }
 @media screen and (max-width: 1367px) {
   #page3 .content {
-    top: 10px;
+    top: 60px;
   }
 }
 #page3 .content .title {
@@ -199,6 +211,27 @@ section {
 #page3 .content .box li {
   float: left;
   margin: 0 20px;
+  position: relative;
+}
+#page3 .content .box li a {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 338px;
+  line-height: 338px;
+  background: rgba(0, 0, 0, 0);
+  transition: all .75s ease;
+  color: #fff;
+  opacity: 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border-radius: 6px;
+}
+#page3 .content .box li a:hover {
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 1;
 }
 #page3 .content .box li div {
   width: 230px;
@@ -230,15 +263,21 @@ section {
 #page4 .content {
   width: 822px;
   height: auto;
-  top: 16.66666667%;
+  top: 33.33333333%;
   left: 50%;
   margin-left: -411px;
   position: relative;
   z-index: 3;
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+#page4 .content.active {
+  top: 16.66666667%;
+  opacity: 1;
 }
 @media screen and (max-width: 1367px) {
   #page4 .content {
-    top: 10px;
+    top: 60px;
   }
 }
 #page4 .content .title {
@@ -338,15 +377,21 @@ section {
 #page5 .content {
   width: 1080px;
   height: auto;
-  top: 16.66666667%;
+  top: 33.33333333%;
   left: 50%;
   margin-left: -540px;
   position: relative;
   z-index: 3;
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+#page5 .content.active {
+  top: 16.66666667%;
+  opacity: 1;
 }
 @media screen and (max-width: 1367px) {
   #page5 .content {
-    top: 10px;
+    top: 60px;
   }
 }
 #page5 .content .title {
@@ -491,10 +536,13 @@ section {
   font-size: 14px;
   position: absolute;
   color: #73d196;
-  left: -38px;
+  left: -19px;
   top: 50%;
   margin-top: -7px;
-  display: none;
+  opacity: 0;
+}
+.dot-btn div p:not(:nth-child(1)) {
+  left: -33px;
 }
 .dot-btn div.active {
   border: 1px solid #73d196;
@@ -503,10 +551,15 @@ section {
   background: #73d196;
 }
 .dot-btn div.active p {
-  display: block;
+  opacity: 1;
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  left: -38px;
 }
 .dot-btn div.active b {
   display: none;
+}
+.dot-btn div.active:not(:nth-child(1)) p {
+  left: -66px;
 }
 header {
   position: fixed;
@@ -548,4 +601,64 @@ header .content ul li a {
 }
 header .content ul li:hover a {
   color: #73d196;
+}
+@keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+.animate-bounceInDown {
+  animation: 'bounceInDown' 1s ease-in-out 0s 1;
+  -webkit-animation: 'bounceInDown' 1s ease-in-out 0s 1;
+}
+@keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+.animate-bounceInLeft {
+  animation: 'bounceInLeft' 1.5s ease-in-out 0s 1;
+  -webkit-animation: 'bounceInLeft' 1.5s ease-in-out 0s 1;
 }
