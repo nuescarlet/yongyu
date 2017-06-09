@@ -1,0 +1,134 @@
+//通用格式
+body {
+  font-family: Arial, Helvetica, Tahoma, "microsoft yahei", sans-serif;
+  color: #666;
+  margin: 0px;
+  font-size: 10px;
+}
+
+ul, p, h1, h2, h3, h4, h5, h6, ol, dl, dd {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+a {
+  color: #2e2e2e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+section{
+  min-width: 1280px;
+}
+//颜色
+@green: #73d196;
+@grey: #646766;
+@orange: #e48818;
+//导航栏
+header{
+  width:100%;
+  min-width: 1280px;
+  height:80px;
+  background: #fff;
+  .content{
+    width:1100px;
+    margin:0 auto;
+    height:80px;
+    position: relative;
+    >a{
+      width:179px;
+      height:65px;
+      display: block;
+      position: absolute;
+      left:0px;
+      top:50%;
+      margin-top:-65/2px;
+      background-image: url(../img/top-logo.png);
+    }
+    ul{
+      position:absolute;
+      right:0px;
+      bottom: 18px;
+      li{
+        float: left;
+        margin-left:38px;
+        color:#323232;
+        font-size: 16px;
+        a{
+          transition: all .3s ease;
+        }
+        &:hover{
+          a{
+            color: @green;
+          }
+        }
+      }
+    }
+  }
+}
+//banner
+.banner{
+  width:100%;
+  height:400px;
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+  position: relative;
+  >div{
+    width:298px;
+    height:300px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top: -298/2px;
+    margin-left: -300/2px;
+    background-image: url(../img/About-us.png);
+    border-radius: 50%;
+  }
+  >span{
+    width:318px;
+    height:324px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top: -161px;
+    margin-left: -160px;
+    background-image: url(../img/light-aboutus.png);
+  }
+}
+
+@-webkit-keyframes breathe {
+  0% { opacity: .2;}
+  100% { opacity: 1;}
+}
+.animate-breathe{
+  animation: 'breathe' 2.7s ease-in-out 0s infinite alternate;
+  -webkit-animation: 'breathe' 2.7s ease-in-out 0s infinite alternate;
+}
+
+@-webkit-keyframes breathe2 {
+  0% { opacity: 0;}
+  100% { opacity: 0.75;}
+}
+.animate-breathe2{
+  animation: 'breathe2' 2.7s ease-in-out 0s infinite alternate;
+  -webkit-animation: 'breathe2' 2.7s ease-in-out 0s infinite alternate;
+}
+
+//about-us
+.about-us{
+  margin:50px auto 50px;
+  width:1100px;
+}
