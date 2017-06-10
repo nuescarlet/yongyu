@@ -152,7 +152,7 @@
                 <p>${pages[(nowPage+1)%4].text}</p>
                 </li>
             `)
-            setTimeout("$('.carousel li:nth-child(4)').css({'left':'546px'})", 10);
+            setTimeout("$('.carousel li:nth-child(4)').css({'left':'546px'})", 0);
             setTimeout("$('.carousel ul li:nth-child(1)').remove()", 300);
             cd();
         }
@@ -176,7 +176,7 @@
                 <p>${pages[(nowPage+3)%4].text}</p>
                 </li>
             `)
-            setTimeout("$('.carousel li:nth-child(1)').css({'left':'6px'})", 10);
+            setTimeout("$('.carousel li:nth-child(1)').css({'left':'6px'})", 0);
             setTimeout("$('.carousel ul li:nth-child(4)').remove()", 550);
             cd();
         }

@@ -84,14 +84,14 @@ header .content ul li:hover a {
   position: relative;
 }
 .banner > div {
-  width: 298px;
+  width: 350px;
   height: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -149px;
-  margin-left: -150px;
-  background-image: url(../img/About-us.png);
+  margin-top: -150px;
+  margin-left: -175px;
+  background-image: url(../img/Operating-the-product.png);
   border-radius: 50%;
 }
 .banner > span {
@@ -144,41 +144,68 @@ header .content ul li:hover a {
   animation: 'breathe2' 2.7s ease-in-out 0s infinite alternate;
   -webkit-animation: 'breathe2' 2.7s ease-in-out 0s infinite alternate;
 }
-.about-us {
+.product {
   margin: 50px auto 50px;
   width: 1100px;
   min-width: 1100px;
   text-align: center;
   position: relative;
 }
-.about-us p {
+.product p {
   color: #555555;
 }
-.about-us p.title {
+.product p.title {
   font-size: 37px;
   letter-spacing: 2px;
 }
-.about-us p.title-s {
+.product p.title-s {
   font-size: 16px;
   margin: 16px 0;
   font-weight: 600;
   font-family: "microsoft yahei";
 }
-.about-us p.text {
+.product p.text {
   font-size: 16px;
   text-align: left;
   line-height: 34px;
   text-indent: 32px;
   letter-spacing: .5px;
 }
-.about-us .line {
+.product .line {
   border-top: 4px solid #73d196;
   width: 50px;
   margin: 0 auto;
   margin-bottom: 23px;
 }
-.about-us > div {
+.product > div {
   margin: 11px 0;
+}
+.product > ul {
+  width: 366px;
+  margin: 40px auto 0px;
+}
+.product > ul li {
+  float: left;
+  text-align: center;
+  margin: 0 25px;
+  font-size: 18px;
+  color: #555555;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+.product > ul li:hover {
+  color: #f67a39;
+}
+.product > ul li.active {
+  color: #f67a39;
+}
+.product .choose-line {
+  border-color: #f67a39;
+  width: 70px;
+  position: relative;
+  margin-top: 28px;
+  left: 0px;
+  transition: all .5s ease;
 }
 @-webkit-keyframes upIn {
   0% {

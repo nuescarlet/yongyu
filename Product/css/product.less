@@ -87,14 +87,14 @@ header{
   background-size: cover;
   position: relative;
   >div{
-    width:298px;
+    width:350px;
     height:300px;
     position:absolute;
     top:50%;
     left:50%;
-    margin-top: -298/2px;
-    margin-left: -300/2px;
-    background-image: url(../img/About-us.png);
+    margin-top: -300/2px;
+    margin-left: -350/2px;
+    background-image: url(../img/Operating-the-product.png);
     border-radius: 50%;
   }
   >span{
@@ -138,8 +138,8 @@ header{
   -webkit-animation: 'breathe2' 2.7s ease-in-out 0s infinite alternate;
 }
 
-//about-us
-.about-us{
+//product
+.product{
   margin:50px auto 50px;
   width:1100px;
   min-width: 1100px;
@@ -173,6 +173,33 @@ header{
   }
   >div{
     margin:11px 0;
+  }
+  >ul{
+    width:366px;
+    margin:40px auto 0px;
+    li{
+      float: left;
+      text-align: center;
+      margin:0 25px;
+      font-size: 18px;
+      color:#555555;
+      cursor: pointer;
+      transition: all .5s ease;
+      &:hover{
+        color:#f67a39;
+      }
+      &.active{
+        color:#f67a39;
+      }
+    }
+  }
+  .choose-line{
+    border-color:#f67a39;
+    width:70px;
+    position: relative;
+    margin-top:28px;
+    left:0px;
+    transition: all .5s ease;
   }
 }
 

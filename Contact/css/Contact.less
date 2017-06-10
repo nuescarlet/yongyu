@@ -94,7 +94,7 @@ header{
     left:50%;
     margin-top: -298/2px;
     margin-left: -300/2px;
-    background-image: url(../img/About-us.png);
+    background-image: url(../img/Contact-us.png);
     border-radius: 50%;
   }
   >span{
@@ -138,8 +138,8 @@ header{
   -webkit-animation: 'breathe2' 2.7s ease-in-out 0s infinite alternate;
 }
 
-//about-us
-.about-us{
+//contact-us
+.contact-us{
   margin:50px auto 50px;
   width:1100px;
   min-width: 1100px;
@@ -171,8 +171,46 @@ header{
     margin:0 auto;
     margin-bottom: 23px;
   }
-  >div{
-    margin:11px 0;
+  ul{
+    width:986px;
+    margin:90*100/1080% auto 0;
+    @media screen and (max-width: 1367px){
+      margin-top:20px;
+    }
+    li{
+      float: left;
+      &:nth-child(1) >span{
+        background:url(../img/sprite1.png) no-repeat -4px -23px;
+      }
+      &:nth-child(2) >span{
+        background:url(../img/sprite1.png) no-repeat -118px -23px;
+      }
+      &:nth-child(3) >span{
+        background:url(../img/sprite1.png) no-repeat -190px -136px;
+      }
+      &:nth-child(2){
+        margin:0 190px;
+      }
+      >span{
+        display:block;
+        float: left;
+        width:62px;
+        height:62px;
+      }
+      p{
+        float: left;
+        margin-left: 30px;
+        font-size: 16px;
+        text-align: left;
+        color: #000;
+        margin-top: 6px;
+        >span{
+          display:block;
+          font-size: 14px;
+          margin-top: 18px;
+        }
+      }
+    }
   }
 }
 
@@ -240,5 +278,34 @@ footer{
     text-align: center;
     line-height:22px;
     padding-top:12px;
+  }
+}
+
+//map
+#allmap{
+  width:1000px;
+  height:500px;
+  overflow: hidden;
+  margin:0 auto;
+  font-family:"Î¢ÈíÑÅºÚ";
+}
+.map{
+  margin:0 auto;
+  width:1000px;
+  height:500px;
+  position: relative;
+  box-shadow: 0 9px 30px -6px rgba(0, 0, 0, 0.2), 0 18px 20px -10px rgba(0, 0, 0, 0.04), 0 18px 20px -10px rgba(0, 0, 0, 0.04), 0 10px 20px -10px rgba(0, 0, 0, 0.04);
+  >p{
+    position: absolute;
+    width:280px;
+    height:22px;
+    line-height: 22px;
+    background: #fff;
+    bottom:0px;
+    left:0px;
+    color:#000;
+    font-size: 16px;
+    box-sizing: border-box;
+    letter-spacing: .5px;
   }
 }

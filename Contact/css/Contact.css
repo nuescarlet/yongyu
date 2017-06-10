@@ -91,7 +91,7 @@ header .content ul li:hover a {
   left: 50%;
   margin-top: -149px;
   margin-left: -150px;
-  background-image: url(../img/About-us.png);
+  background-image: url(../img/Contact-us.png);
   border-radius: 50%;
 }
 .banner > span {
@@ -144,41 +144,81 @@ header .content ul li:hover a {
   animation: 'breathe2' 2.7s ease-in-out 0s infinite alternate;
   -webkit-animation: 'breathe2' 2.7s ease-in-out 0s infinite alternate;
 }
-.about-us {
+.contact-us {
   margin: 50px auto 50px;
   width: 1100px;
   min-width: 1100px;
   text-align: center;
   position: relative;
 }
-.about-us p {
+.contact-us p {
   color: #555555;
 }
-.about-us p.title {
+.contact-us p.title {
   font-size: 37px;
   letter-spacing: 2px;
 }
-.about-us p.title-s {
+.contact-us p.title-s {
   font-size: 16px;
   margin: 16px 0;
   font-weight: 600;
   font-family: "microsoft yahei";
 }
-.about-us p.text {
+.contact-us p.text {
   font-size: 16px;
   text-align: left;
   line-height: 34px;
   text-indent: 32px;
   letter-spacing: .5px;
 }
-.about-us .line {
+.contact-us .line {
   border-top: 4px solid #73d196;
   width: 50px;
   margin: 0 auto;
   margin-bottom: 23px;
 }
-.about-us > div {
-  margin: 11px 0;
+.contact-us ul {
+  width: 986px;
+  margin: 8.33333333% auto 0;
+}
+@media screen and (max-width: 1367px) {
+  .contact-us ul {
+    margin-top: 20px;
+  }
+}
+.contact-us ul li {
+  float: left;
+}
+.contact-us ul li:nth-child(1) > span {
+  background: url(../img/sprite1.png) no-repeat -4px -23px;
+}
+.contact-us ul li:nth-child(2) > span {
+  background: url(../img/sprite1.png) no-repeat -118px -23px;
+}
+.contact-us ul li:nth-child(3) > span {
+  background: url(../img/sprite1.png) no-repeat -190px -136px;
+}
+.contact-us ul li:nth-child(2) {
+  margin: 0 190px;
+}
+.contact-us ul li > span {
+  display: block;
+  float: left;
+  width: 62px;
+  height: 62px;
+}
+.contact-us ul li p {
+  float: left;
+  margin-left: 30px;
+  font-size: 16px;
+  text-align: left;
+  color: #000;
+  margin-top: 6px;
+}
+.contact-us ul li p > span {
+  display: block;
+  font-size: 14px;
+  margin-top: 18px;
 }
 @-webkit-keyframes upIn {
   0% {
@@ -253,4 +293,31 @@ footer > div:nth-child(2) {
   text-align: center;
   line-height: 22px;
   padding-top: 12px;
+}
+#allmap {
+  width: 1000px;
+  height: 500px;
+  overflow: hidden;
+  margin: 0 auto;
+  font-family: "΢���ź�";
+}
+.map {
+  margin: 0 auto;
+  width: 1000px;
+  height: 500px;
+  position: relative;
+  box-shadow: 0 9px 30px -6px rgba(0, 0, 0, 0.2), 0 18px 20px -10px rgba(0, 0, 0, 0.04), 0 18px 20px -10px rgba(0, 0, 0, 0.04), 0 10px 20px -10px rgba(0, 0, 0, 0.04);
+}
+.map > p {
+  position: absolute;
+  width: 280px;
+  height: 22px;
+  line-height: 22px;
+  background: #fff;
+  bottom: 0px;
+  left: 0px;
+  color: #000;
+  font-size: 16px;
+  box-sizing: border-box;
+  letter-spacing: .5px;
 }
